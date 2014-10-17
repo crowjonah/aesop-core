@@ -13,7 +13,7 @@ class AesopGalleryComponentAdmin {
        	add_action('admin_init',								array($this,'sc_helper'));
        	add_filter('manage_ai_galleries_posts_columns', 		array($this,'col_head'));
 		add_action('manage_ai_galleries_posts_custom_column', 	array($this,'col_content'), 10, 2);
-		add_filter('cmb_meta_boxes', 							array($this,'aesop_gallery_meta' ));
+		add_filter('cmb2_meta_boxes', 							array($this,'aesop_gallery_meta' ));
 	}
 
 	/**
@@ -190,8 +190,9 @@ class AesopGalleryComponentAdmin {
 	function aesop_gallery_meta( array $meta_boxes ) {
 
 		$meta_boxes[] = array(
+			'id'		=> 'aesop_gallery_options',
 			'title' 	=> __('Gallery Options', 'aesop-core'),
-			'pages' 	=> array('ai_galleries'),
+			'object_types' 	=> array('ai_galleries'),
 			'fields' 	=> array(
 				array(
 					'id'             => 'aesop_gallery_width',
@@ -219,8 +220,9 @@ class AesopGalleryComponentAdmin {
 
 		// thumbanil gallery options
 		$meta_boxes[] = array(
+			'id'		=> 'aesop_gallery_thumbnail_options',
 			'title' 	=> __('Thumbnail Gallery Options', 'aesop-core'),
-			'pages' 	=> array('ai_galleries'),
+			'object_types' 	=> array('ai_galleries'),
 			'fields' 	=> array(
 				array(
 					'id'             => 'aesop_thumb_gallery_transition',
@@ -254,8 +256,9 @@ class AesopGalleryComponentAdmin {
 
 		// photoset gallery options
 		$meta_boxes[] = array(
+			'id'		=> 'aesop_gallery_photoset_options',
 			'title' 	=> __('Photoset Gallery Options', 'aesop-core'),
-			'pages' 	=> array('ai_galleries'),
+			'object_types' 	=> array('ai_galleries'),
 			'fields' 	=> array(
 				array(
 					'id'             => 'aesop_photoset_gallery_layout',
