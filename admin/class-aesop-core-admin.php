@@ -48,7 +48,7 @@ class Aesop_Core_Admin {
         require_once( AI_CORE_DIR.'admin/includes/components/component-gallery.php' );
 
         if( !class_exists( 'CMB2' ) ) {
-    		require_once( AI_CORE_DIR.'/admin/includes/custom-meta-boxes/cmb2.php' );
+    		require_once( AI_CORE_DIR.'/admin/includes/custom-meta-boxes/init.php' );
     	}
 
 		/*
