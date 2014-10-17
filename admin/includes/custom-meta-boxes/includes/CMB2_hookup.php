@@ -120,7 +120,7 @@ class CMB2_hookup {
 		if ( ! is_admin() ) {
 			// we need to register colorpicker on the front-end
 			wp_register_script( 'iris', admin_url( 'js/iris.min.js' ), array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ), CMB2_VERSION );
-			wp_register_script( 'wp-color-picker', admin_url( 'js/color-picker.min.js' ), array( 'iris' ), CMB2_VERSION );
+			wp_register_script( 'wp-color-picker', admin_url( 'js/color-picker.min.js' ), array( 'iris' ) );
 			wp_localize_script( 'wp-color-picker', 'wpColorPickerL10n', array(
 				'clear'         => __( 'Clear', 'cmb2' ),
 				'defaultString' => __( 'Default', 'cmb2' ),
@@ -136,7 +136,7 @@ class CMB2_hookup {
 		// styles required for cmb
 		$styles = array( 'wp-color-picker' );
 
-		wp_register_script( 'cmb2-scripts', cmb2_utils()->url( "js/cmb2{$min}.js" ), $scripts, CMB2_VERSION );
+		wp_register_script( 'cmb2-scripts', cmb2_utils()->url( "js/cmb2{$min}.js" ), $scripts );
 
 		wp_enqueue_media();
 
