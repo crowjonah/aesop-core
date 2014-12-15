@@ -10,11 +10,11 @@
 * 	@copyright 2014 Nick Haskins
 *
 * 	@wordpress-plugin
-* 	Plugin Name:       Aesop Story Engine
+* 	Plugin Name:       Aesop Story Engine Fork
 * 	Plugin URI:        http://aesopstoryengine.com
 * 	Description:       Open-sourced suite of components that empower interactive storytelling.
 * 	Version:           1.3.2
-* 	Author:            Aesopinteractive LLC
+* 	Author:            Aesopinteractive LLC + crowjonah
 * 	Author URI:        http://aesopstoryengine.com
 * 	Text Domain:       aesop-core
 * 	License:           GPL-2.0+

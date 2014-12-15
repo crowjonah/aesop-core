@@ -106,6 +106,18 @@ module.exports = function(grunt) {
                     ]
                 }
             },
+            tinymcepluginscripts: {
+                options: {
+                    sourceMap: 'admin/assets/js/aiview/plugin.min.js.map',
+                    sourceMappingURL: 'plugin.min.js.map',
+                    sourceMapPrefix: 3
+                },
+                files: {
+                    'admin/assets/js/tinymce/aiview/plugin.min.js': [
+                        'admin/assets/js/tinymce/aiview/plugin.js'
+                    ]
+                }
+            },
             publicscripts: {
                 options: {
                     sourceMap: 'public/assets/js/ai-core.js.map',
@@ -153,7 +165,22 @@ module.exports = function(grunt) {
 				]
 			}
 
-	    }
+	    },
+        rsync: {
+            options: {
+                args: ["--verbose"],
+                exclude: [".git*","*.scss","node_modules", "less", "Gruntfile.js"],
+                recursive: true
+            },
+            prod: {
+                options: {
+                    src: "./",
+                    dest: "~/public_html/treatments/wp-content/plugins/aesop-core-fork",
+                    host: "pthrvfxc@p3maine.com",
+                    delete: true // Careful this option could cause data loss, read the docs!
+                }
+            }
+        },
     });
 
     // register task
