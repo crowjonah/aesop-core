@@ -30,7 +30,10 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$instance++;
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
-		$height = preg_replace('/[^0-9]/','',$atts['height']);
+		// $height = preg_replace('/[^0-9]/','',$atts['height']);
+		// $height = $atts['height'] == 'full' ? ;
+
+		$figureHeight = $atts['height'] == 'full' ? ' treatments-parallax': '" style="height:' . absint ($atts['height']) . 'px;';
 
 		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
 		$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"', esc_url( $atts['img'] ));
@@ -94,7 +97,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 						});
 					</script>
 				<?php } ?>
-					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>" style="height:<?php echo absint( $height );?>px;">
+					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?> <?php echo $figureHeight; ?>">
 
 						<?php do_action('aesop_parallax_inner_inside_top'); //action ?>
 

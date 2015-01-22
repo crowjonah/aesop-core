@@ -15,9 +15,9 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'imgwidth' 			=> array(
 						'type'		=> 'text_small',
-						'default' 	=> '300px',
+						'default' 	=> '100%',
 						'desc' 		=> __( 'Image Width', 'aesop-core' ),
-						'tip'		=> __('Width of the image. You can enter the size as <code>40%</code> or <code>500px</code>.','aesop-core')
+						'tip'		=> __('Width of the image. Percentages are relative to the width of the content.','aesop-core')
 					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
@@ -29,7 +29,7 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'text_small',
 						'default' 	=> '',
 						'desc' 		=> __( 'Image Offset', 'aesop-core' ),
-						'tip'		=> __('Using this option you can <em>float</em> an image outside of the text. Enter a size like <code>-200px</code>.','aesop-core')
+						'tip'		=> __('Using this option you can <em>float</em> an image outside of the text. Enter a size like <code>-200px</code>. Note that this might break screen-size responsiveness.','aesop-core')
 					),
 					'credit' 			=> array(
 						'type'		=> 'text',
@@ -109,53 +109,53 @@ if(!function_exists('aesop_shortcodes')){
 				),
 				'desc' 				=> __( 'Creates an image component with caption, alignment, and lightbox options.','aesop-core' )
 			),
-			'character' 			=> array(
-				'name' 				=> __('Character', 'aesop-core'),
-				'type' 				=> 'single',
-				'atts' 				=> array(
-					'img' 			=> array(
-						'type'		=> 'media_upload',
-						'default' 	=> '',
-						'desc' 		=> __( 'Character Image', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
-					),
-					'name' 			=> array(
-						'type'		=> 'text',
-						'default' 	=> '',
-						'desc' 		=> __( 'Character Name', 'aesop-core' ),
-						'tip'		=> __('Enter a name for the character. If you do not enter a name, it will not show.','aesop-core')
-					),
-					'caption' 			=> array(
-						'type'		=> 'text_area',
-						'default' 	=> '',
-						'desc' 		=> __( 'Caption', 'aesop-core' ),
-						'tip'		=> __('Optional caption for the character. If you do not enter a caption, it will not show.','aesop-core')
-					),
-					'align' 			=> array(
-						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => 'left',
-								'name'	=> __('Left', 'aesop-core')
-							),
-							array(
-								'value' => 'right',
-								'name'	=> __('Right', 'aesop-core')
-							)
-						),
-						'default' 	=> 'left',
-						'desc' 		=> __( 'Alignment', 'aesop-core' ),
-						'tip'		=> __('Alignment of the character component. You can align it to the left or right of the main text.','aesop-core')
-					),
-					'width' 			=> array(
-						'type'		=> 'text_small',
-						'default' 	=> '',
-						'desc' 		=> __( 'Width', 'aesop-core' ),
-						'tip'		=> __('Width of the character component. You can enter the size as <code>40%</code> or <code>500px</code>.','aesop-core')
-					)
-				),
-				'desc' 				=> __( 'Creates a character that can be positioned to the left or right of your story.','aesop-core' )
-			),
+			// 'character' 			=> array(
+			// 	'name' 				=> __('Character', 'aesop-core'),
+			// 	'type' 				=> 'single',
+			// 	'atts' 				=> array(
+			// 		'img' 			=> array(
+			// 			'type'		=> 'media_upload',
+			// 			'default' 	=> '',
+			// 			'desc' 		=> __( 'Character Image', 'aesop-core' ),
+			// 			'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
+			// 		),
+			// 		'name' 			=> array(
+			// 			'type'		=> 'text',
+			// 			'default' 	=> '',
+			// 			'desc' 		=> __( 'Character Name', 'aesop-core' ),
+			// 			'tip'		=> __('Enter a name for the character. If you do not enter a name, it will not show.','aesop-core')
+			// 		),
+			// 		'caption' 			=> array(
+			// 			'type'		=> 'text_area',
+			// 			'default' 	=> '',
+			// 			'desc' 		=> __( 'Caption', 'aesop-core' ),
+			// 			'tip'		=> __('Optional caption for the character. If you do not enter a caption, it will not show.','aesop-core')
+			// 		),
+			// 		'align' 			=> array(
+			// 			'type'		=> 'select',
+			// 			'values' 	=> array(
+			// 				array(
+			// 					'value' => 'left',
+			// 					'name'	=> __('Left', 'aesop-core')
+			// 				),
+			// 				array(
+			// 					'value' => 'right',
+			// 					'name'	=> __('Right', 'aesop-core')
+			// 				)
+			// 			),
+			// 			'default' 	=> 'left',
+			// 			'desc' 		=> __( 'Alignment', 'aesop-core' ),
+			// 			'tip'		=> __('Alignment of the character component. You can align it to the left or right of the main text.','aesop-core')
+			// 		),
+			// 		'width' 			=> array(
+			// 			'type'		=> 'text_small',
+			// 			'default' 	=> '',
+			// 			'desc' 		=> __( 'Width', 'aesop-core' ),
+			// 			'tip'		=> __('Width of the character component. You can enter the size as <code>40%</code> or <code>500px</code>.','aesop-core')
+			// 		)
+			// 	),
+			// 	'desc' 				=> __( 'Creates a character that can be positioned to the left or right of your story.','aesop-core' )
+			// ),
 			'quote' 			=> array(
 				'name' 				=> __('Aesop Quote Section', 'aesop-core'),
 				'type' 				=> 'single',
@@ -458,15 +458,15 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'select',
 						'values' 	=> array(
 							array(
-								'value' => 'on',
-								'name'	=> __('On','aesop-core')
-							),
-							array(
 								'value' => 'off',
 								'name'	=> __('Off','aesop-core')
+							),
+							array(
+								'value' => 'on',
+								'name'	=> __('On','aesop-core')
 							)
 						),
-						'default'	=> '',
+						'default'	=> 'off',
 						'desc'		=> __('Full-size Background Image','aesop-core'),
 						'tip'		=> __('If set to on, the background image of the chapter will be as large as the browser window.','aesop-core')
 					),
@@ -487,7 +487,7 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'text_small',
 						'default' 	=> '500',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
-						'tip'		=> __('The height of the viewable image area. Enter a value such as <code>500px</code>. Avoid using percentages with this option.','aesop-core')
+						'tip'		=> __('The height of the viewable image area. Enter a value such as <code>full</code> for a fixed, full-screenimage, or <code>500px</code>. Don\'t use percentages.','aesop-core')
 					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
@@ -509,7 +509,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'on',
 						'desc' 		=> __('Image Movement', 'aesop-core' ),
-						'tip'		=> __('If set to <em>on</em>, the image will move slightly as you scroll down the page.','aesop-core')
+						'tip'		=> __('If set to <em>on</em>, the image will move slightly as you scroll down the page. Do not use with Height is set to <code>full</code>','aesop-core')
 					),
 					'caption' 	=> array(
 						'type'		=> 'text_area',
@@ -886,67 +886,67 @@ if(!function_exists('aesop_shortcodes')){
 				),
 				'desc' 				=> __( 'Responsive video component with alignment and optional caption.','aesop-core' ),
 			),
-			'map' 				=> array(
-				'name' 				=> __('Map', 'aesop-core'),
-				'type' 				=> 'single',
-				'atts' 				=> array(
-					'height' 			=> array(
-						'type'		=> 'text_small',
-						'default' 	=> '',
-						'desc' 		=> __( 'Height', 'aesop-core' ),
-						'tip'		=> __('The height of the map component. By default this is set to <em>500px</em>. Avoid using percentages with this option.','aesop-core')
-					),
-					'sticky'		=> array(
-						'type'		=> 'select',
-						'default'	=> 'off',
-						'desc'		=> __('Sticky Maps','aesop-core'),
-						'tip'		=> __('By choosing a position the map will follow the scrolling of the story with the markers that you\'ll add below.<br /><br />After toggling a location, a new Map Marker component will show up. Add a marker for each stop in the story that you would ike the map to start at. Stops are made in the order that you added the markers in the map admin.','aesop-core'),
-						'values'	=> array(
-							array(
-								'value' => 'off',
-								'name'	=> __('Off', 'aesop-core')
-							),
-							array(
-								'value' => 'left',
-								'name'	=> __('Sticky Left', 'aesop-core')
-							),
-							array(
-								'value' => 'top',
-								'name'	=> __('Sticky Top', 'aesop-core')
-							),
-							array(
-								'value' => 'right',
-								'name'	=> __('Sticky Right', 'aesop-core')
-							),
-							array(
-								'value' => 'bottom',
-								'name'
-									=> __('Sticky Bottom', 'aesop-core')
-							)
-						)
-					)
-				),
-				'desc' 				=> __( 'Creates the basic map component. Use the Map Locations edit boxes when writing your story to add locations.','aesop-core' )
-			),
-			'timeline_stop' 	=> array(
-				'name' 				=> __('Timeline Stop', 'aesop-core'),
-				'type' 				=> 'single',
-				'atts' 				=> array(
-					'num' 			=> array(
-						'type'		=> 'text',
-						'default' 	=> '',
-						'desc' 		=> __( 'Navigation Menu Item Label', 'aesop-core' ),
-						'tip'		=> __('This is what is displayed for the timeline navigation menu item label. Example usage includes dates, years, colors, locations, and names.','aesop-core')
-					),
-					'title' 			=> array(
-						'type'		=> 'text',
-						'default' 	=> '',
-						'desc' 		=> __( 'Timeline Title', 'aesop-core' ),
-						'tip'		=> __('The timeline title that should be displayed within the story.','aesop-core')
-					)
-				),
-				'desc' 				=> __( 'Enter a number such as 2007, and a small timeline will be displayed with scroll to points. This works similar to the chapter heading.','aesop-core' )
-			),
+			// 'map' 				=> array(
+			// 	'name' 				=> __('Map', 'aesop-core'),
+			// 	'type' 				=> 'single',
+			// 	'atts' 				=> array(
+			// 		'height' 			=> array(
+			// 			'type'		=> 'text_small',
+			// 			'default' 	=> '',
+			// 			'desc' 		=> __( 'Height', 'aesop-core' ),
+			// 			'tip'		=> __('The height of the map component. By default this is set to <em>500px</em>. Avoid using percentages with this option.','aesop-core')
+			// 		),
+			// 		'sticky'		=> array(
+			// 			'type'		=> 'select',
+			// 			'default'	=> 'off',
+			// 			'desc'		=> __('Sticky Maps','aesop-core'),
+			// 			'tip'		=> __('By choosing a position the map will follow the scrolling of the story with the markers that you\'ll add below.<br /><br />After toggling a location, a new Map Marker component will show up. Add a marker for each stop in the story that you would ike the map to start at. Stops are made in the order that you added the markers in the map admin.','aesop-core'),
+			// 			'values'	=> array(
+			// 				array(
+			// 					'value' => 'off',
+			// 					'name'	=> __('Off', 'aesop-core')
+			// 				),
+			// 				array(
+			// 					'value' => 'left',
+			// 					'name'	=> __('Sticky Left', 'aesop-core')
+			// 				),
+			// 				array(
+			// 					'value' => 'top',
+			// 					'name'	=> __('Sticky Top', 'aesop-core')
+			// 				),
+			// 				array(
+			// 					'value' => 'right',
+			// 					'name'	=> __('Sticky Right', 'aesop-core')
+			// 				),
+			// 				array(
+			// 					'value' => 'bottom',
+			// 					'name'
+			// 						=> __('Sticky Bottom', 'aesop-core')
+			// 				)
+			// 			)
+			// 		)
+			// 	),
+			// 	'desc' 				=> __( 'Creates the basic map component. Use the Map Locations edit boxes when writing your story to add locations.','aesop-core' )
+			// ),
+			// 'timeline_stop' 	=> array(
+			// 	'name' 				=> __('Timeline Stop', 'aesop-core'),
+			// 	'type' 				=> 'single',
+			// 	'atts' 				=> array(
+			// 		'num' 			=> array(
+			// 			'type'		=> 'text',
+			// 			'default' 	=> '',
+			// 			'desc' 		=> __( 'Navigation Menu Item Label', 'aesop-core' ),
+			// 			'tip'		=> __('This is what is displayed for the timeline navigation menu item label. Example usage includes dates, years, colors, locations, and names.','aesop-core')
+			// 		),
+			// 		'title' 			=> array(
+			// 			'type'		=> 'text',
+			// 			'default' 	=> '',
+			// 			'desc' 		=> __( 'Timeline Title', 'aesop-core' ),
+			// 			'tip'		=> __('The timeline title that should be displayed within the story.','aesop-core')
+			// 		)
+			// 	),
+			// 	'desc' 				=> __( 'Enter a number such as 2007, and a small timeline will be displayed with scroll to points. This works similar to the chapter heading.','aesop-core' )
+			// ),
 			'document' 	=> array(
 				'name' 				=> __('Document', 'aesop-core'),
 				'type' 				=> 'single',
@@ -982,55 +982,55 @@ if(!function_exists('aesop_shortcodes')){
 				),
 				'desc' 				=> __( 'Show a document that is revealed with a click.','aesop-core' )
 			),
-			'collection' 	=> array(
-				'name' 				=> __('Collections', 'aesop-core'),
-				'type' 				=> 'single',
-				'atts' 				=> array(
-					'title' 			=> array(
-						'type'		=> 'text',
-						'default' 	=> '',
-						'desc' 		=> __( 'Title', 'aesop-core' ),
-						'tip'		=> __('Display an optional heading to be used within the Collection component.','aesop-core')
-					),
-					'collection' 			=> array(
-						'type'		=> 'select',
-						'values'	=> aesop_option_get_categories(),
-						'default' 	=> '',
-						'desc' 		=> __( 'Category', 'aesop-core' ),
-						'tip'		=> __('Select the category that you want stories to be displayed from.','aesop-core')
-					),
-					'limit' 			=> array(
-						'type'		=> 'text_small',
-						'default' 	=> '',
-						'desc' 		=> __( 'Number of Stories', 'aesop-core' ),
-						'tip'		=> __('How many stories should be displayed in this collection?','aesop-core')
-					),
-					'columns' 			=> array(
-						'type'		=> 'select',
-						'values' 	=> aesop_option_counter(5),
-						'default' 	=> '2',
-						'desc' 		=> __( 'Columns', 'aesop-core' ),
-						'tip'		=> __('Stories are displayed in a grid. How many columns should the grid be?','aesop-core')
-					),
-					'splash' 			=> array(
-						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => 'on',
-								'name'	=> __('On', 'aesop-core')
-							),
-							array(
-								'value' => 'off',
-								'name'	=> __('Off', 'aesop-core')
-							)
-						),
-						'default' 	=> 'off',
-						'desc' 		=> __( 'Splash Mode', 'aesop-core' ),
-						'tip'		=> __('Setting this to on will display only the actual category titles (without images).','aesop-core')
-					)
-				),
-				'desc' 				=> __( 'Show a collection of stories. Typically used on a page like the home page.','aesop-core' )
-			),
+			// 'collection' 	=> array(
+			// 	'name' 				=> __('Collections', 'aesop-core'),
+			// 	'type' 				=> 'single',
+			// 	'atts' 				=> array(
+			// 		'title' 			=> array(
+			// 			'type'		=> 'text',
+			// 			'default' 	=> '',
+			// 			'desc' 		=> __( 'Title', 'aesop-core' ),
+			// 			'tip'		=> __('Display an optional heading to be used within the Collection component.','aesop-core')
+			// 		),
+			// 		'collection' 			=> array(
+			// 			'type'		=> 'select',
+			// 			'values'	=> aesop_option_get_categories(),
+			// 			'default' 	=> '',
+			// 			'desc' 		=> __( 'Category', 'aesop-core' ),
+			// 			'tip'		=> __('Select the category that you want stories to be displayed from.','aesop-core')
+			// 		),
+			// 		'limit' 			=> array(
+			// 			'type'		=> 'text_small',
+			// 			'default' 	=> '',
+			// 			'desc' 		=> __( 'Number of Stories', 'aesop-core' ),
+			// 			'tip'		=> __('How many stories should be displayed in this collection?','aesop-core')
+			// 		),
+			// 		'columns' 			=> array(
+			// 			'type'		=> 'select',
+			// 			'values' 	=> aesop_option_counter(5),
+			// 			'default' 	=> '2',
+			// 			'desc' 		=> __( 'Columns', 'aesop-core' ),
+			// 			'tip'		=> __('Stories are displayed in a grid. How many columns should the grid be?','aesop-core')
+			// 		),
+			// 		'splash' 			=> array(
+			// 			'type'		=> 'select',
+			// 			'values' 	=> array(
+			// 				array(
+			// 					'value' => 'on',
+			// 					'name'	=> __('On', 'aesop-core')
+			// 				),
+			// 				array(
+			// 					'value' => 'off',
+			// 					'name'	=> __('Off', 'aesop-core')
+			// 				)
+			// 			),
+			// 			'default' 	=> 'off',
+			// 			'desc' 		=> __( 'Splash Mode', 'aesop-core' ),
+			// 			'tip'		=> __('Setting this to on will display only the actual category titles (without images).','aesop-core')
+			// 		)
+			// 	),
+			// 	'desc' 				=> __( 'Show a collection of stories. Typically used on a page like the home page.','aesop-core' )
+			// ),
 			'gallery' 				=> array(
 				'name' 				=> __('Gallery', 'aesop-core'),
 				'type' 				=> 'single',
