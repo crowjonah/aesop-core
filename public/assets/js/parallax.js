@@ -22,8 +22,16 @@
         	$(document).scroll(function(){
 
 		        var scrollTop = $(window).scrollTop();
-        	        var offset = $this.offset().top;
-        	        var height = $this.parent().outerHeight();
+
+                try {
+                    var offset = $this.offset().top;
+                }
+                catch (e)
+                {
+                    console.log(e);
+                }
+
+    	        var height = $this.parent().outerHeight();
 
 	    		// Check if above or below viewport
 				if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {

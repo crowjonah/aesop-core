@@ -64,7 +64,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 								var obj = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-floater');
 						       	function scrollParallax(){
 						       	    var height 			= jQuery(obj).height(),
-        	        					offset 			= jQuery(obj).offset().top,
+        	        					offset 			= obj.length > 0 ? jQuery(obj).offset().top : 0,
 						       	    	scrollTop 		= jQuery(window).scrollTop(),
 						       	    	windowHeight 	= jQuery(window).height(),
 						       	    	floater 		= Math.round( (offset - scrollTop) * 0.1);
