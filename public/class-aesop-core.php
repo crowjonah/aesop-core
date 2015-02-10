@@ -45,6 +45,7 @@ class Aesop_Core {
 	private function __construct() {
 
 		// load component array
+
 		require_once( AI_CORE_DIR.'admin/includes/available.php');
 
 		// load component helpers
