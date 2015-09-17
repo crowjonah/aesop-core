@@ -225,6 +225,16 @@ module.exports = function (grunt) {
                     host: "pthrvfxc@p3maine.com",
                     delete: true // Careful this option could cause data loss, read the docs!
                 }
+            },
+            new2015:
+            {
+                options:
+                {
+                    src: "./",
+                    dest: "~/public_html/2015/wp-content/plugins/aesop-core-fork",
+                    host: "pthrvfxc@p3maine.com",
+                    delete: true // Careful this option could cause data loss, read the docs!
+                }
             }
         },
 

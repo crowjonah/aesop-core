@@ -7,22 +7,22 @@ jQuery(document).ready(function(){
 	//Fitvids
 	jQuery('.aesop-video-container').fitVids();
 
-    jQuery(function(){
-      	jQuery(document.body).on('click touchend','#swipebox-slider .current img', function(e){
-            return false;
-        })
-        .on('click touchend','#swipebox-slider .current', function(e){
-            jQuery('#swipebox-close').trigger('click');
-        });
-    });
+	jQuery(function(){
+		jQuery(document.body).on('click touchend','#swipebox-slider .current img', function(e){
+			return false;
+		})
+		.on('click touchend','#swipebox-slider .current', function(e){
+			jQuery('#swipebox-close').trigger('click');
+		});
+	});
 
-    window.blockFotoramaData = true;
+	window.blockFotoramaData = true;
 
-    var closeChapter = function(){
-    	jQuery('body').removeClass('aesop-chapter-menu-open');
-    }
+	var closeChapter = function(){
+		jQuery('body').removeClass('aesop-chapter-menu-open');
+	}
 
-    // chapter component
+	// chapter component
 	jQuery('.aesop-toggle-chapter-menu').click(function(e){
 		e.preventDefault()
 		jQuery('body').toggleClass('aesop-chapter-menu-open');
@@ -31,11 +31,11 @@ jQuery(document).ready(function(){
 		e.preventDefault();
 		closeChapter();
 	});
-	jQuery('.aesop-chapter-menu-open article').live('click',function(e){
+	jQuery('.aesop-chapter-menu-open').on('click', 'article', function(e){
 		e.preventDefault();
 		closeChapter();
 	});
-	jQuery('.scroll-nav__link').live('click',function(){
+	jQuery('body').on('click', '.scroll-nav__link', function(){
 		closeChapter();
 	});
 });
